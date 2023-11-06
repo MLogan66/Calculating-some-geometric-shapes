@@ -1,0 +1,141 @@
+#include <stdio.h>
+#include <math.h>
+
+
+int main(void){
+	double pi = M_PI,u;
+    printf("The value of pi is approximately: %lf\n", pi);
+    
+	float x,y,z,r,r1,r2,r3,h,A,V;
+    int choice;
+    
+    printf("Choose a geometric shape to calculate -> Right Circular Cone 1, Sphere 2, Cuboid 3, Tetrahedron 4, Square Prism 5, Rectanguler Prism 6, Triangle Prism 7, Ellipsoid 8 ");
+    scanf("%d" ,&choice);
+
+switch(choice){
+	  
+	  case 1:  // Right Circular Cone
+			  printf("Enter the radius of the cone: ");scanf("%f" ,&r);
+              printf("Enter the main line of the cone: ");scanf("%f" ,&x);
+              printf("Enter the height of the cone: ");scanf("%f" ,&h);
+			      
+			  printf("Will area(A) or volume(V) be calculated? ");scanf("%d" ,&A,&V);
+			  A=((r*x*pi)+pi*r*r);
+			  V=(1.0/3.0*pi*r*r*h);
+	             
+	              if (A){
+				     printf("Area of the Right Cercular Cone %.2f\n ",A);}
+				  else{
+				     printf("Volume of the Right Cercular Cone %.2f\n ",V);}
+			      
+	          break;
+	          
+	  case 2:  // Sphere
+	          printf("Enter the radius of the sphere: ");scanf("%f" ,&r);
+	          
+	          printf("Will area or volume be calculated? ");scanf("%d" ,&A ,&V);
+	          A=4.0*pi*r*r;
+	          V=(4.0/3.0*pi*r*r*r);
+	          
+			      if (A){
+				     printf("Area of the Sphere %.2f\n ",A);}
+				  else{
+				     printf("Volume of the Sphere %.2f\n ",V);}
+	          
+	          break;
+	          
+	  case 3:  // Cuboid
+	          printf("Enter the length of the Cuboid: ");scanf("%f" ,&x);
+	  
+	          printf("Will area or volume be calculated? ");scanf("%d" ,&A ,&V);
+	          A=6.0*x*x;
+	          V=x*x*x;
+	          
+			      if (A){
+				     printf("Area of the Cuboid %.2f\n ",A);}
+				  else{
+				     printf("Volume of the Cuboid %.2f\n ",V);}
+				     
+ 	          break;
+
+      case 4: // Tetrahedron 
+              printf("Enter the first length of the Tetrahedron: ");scanf("%f" ,&x);
+              printf("Enter the second length of the Tetrahedron: ");scanf("%f" ,&y);
+              printf("Enter the third length of the Tetrahedron: ");scanf("%f" ,&z);
+              
+              printf("Will area or volume be calculated? ");scanf("%d" ,&A ,&V);
+              A=2.0*(x*y+x*z+y*z);
+              V=x*y*z;
+              
+                  if (A){
+				     printf("Area of the Tetrahedron %.2f\n ",A);}
+				  else{
+				     printf("Volume of the Tetrahedron %.2f\n ",V);}
+				     
+ 	          break;
+ 	          
+      case 5: // Square Prism
+             printf("Enter the length of the Square Prism: ");scanf("%f" ,&x);
+             
+             printf("Will area or volume be calculated? ");scanf("%d" ,&A ,&V);
+             A=2.0*(x*x*x);
+             V=x*x*x;
+             
+                  if (A){
+				     printf("Area of the Square Prism %.2f\n ",A);}
+				  else{
+				     printf("Volume of the Square Prism %.2f\n ",V);}
+				     
+			  break;
+			  	     
+	  case 6: // Rectanguler Prism
+	         printf("Enter the first length of the Rectanguler Prism: ");scanf("%f" ,&x);
+	         printf("Enter the second length of the Rectanguler Prism: ");scanf("%f" ,&y);
+             printf("Enter the third length of the Rectanguler Prism: ");scanf("%f" ,&z);
+	         
+	         printf("Will area or volume be calculated? ");scanf("%d" ,&A ,&V);
+             A=2.0*(x*y+x*z+y*z);
+             V=x*y*z;
+             
+                  if (A){
+				     printf("Area of the Rectanguler Prism %.2f\n ",A);}
+				  else{
+				     printf("Volume of the Rectanguler Prism %.2f\n ",V);}
+				     
+		      break;
+			      
+	  case 7: // Triangle Prism
+	        printf("Enter the first length of the Triangle Prism: ");scanf("%f" ,&x);
+	        printf("Enter the second length of the Triangle Prism: ");scanf("%f" ,&y);
+            printf("Enter the third length of the Triangle Prism: ");scanf("%f" ,&z);
+	        printf("Enter the height of the Triangle Prism: ");scanf("%f" ,&h);
+	        
+	        printf("Will area or volume be calculated? ");scanf("%d" ,&A ,&V);
+	        A = sqrt((1.0/2.0)*(x+y+z)*(y+z)*(x+z)*(x+y))*4;
+			V = sqrt((1.0/2.0)*(x+y+z)*(y+z)*(x+z)*(x+y))*h;
+			         
+				  if (A){
+				     printf("Area of the Triangle Prism %.2f\n ",A);}
+				  else{
+				     printf("Volume of the Triangle Prism %.2f\n ",V);}
+	        
+	          break;
+ 	  case 8: // Ellipsoid
+ 	        printf("Enter the radius of the Ellipsoid: ");scanf("%f" ,&r1);
+ 	        printf("Enter the radius of the Ellipsoid: ");scanf("%f" ,&r2);
+ 	        printf("Enter the radius of the Ellipsoid: ");scanf("%f" ,&r3);
+ 	        
+	        printf("Will area or volume be calculated? ");scanf("%d" ,&A ,&V);
+	        A=(4.0*pi*r1*r2);
+			V=(4.0/3.0*pi*r1*r2*r3);
+			
+			      if (A){
+				     printf("Area of the Ellipsoid %.2f\n ",A);}
+				  else{
+				     printf("Volume of the Ellipsoid %.2f\n ",V);}
+			
+			  break;
+			  
+	  default:printf("Invalid choice!\n");}
+	  
+	  return 0;}
